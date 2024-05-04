@@ -9,7 +9,7 @@ pipeline {
         GOPROXY = "goproxy.cn,direct"
       }
       steps {
-        sh "go version"
+        sh "go build -o main"
       }
     }
   }

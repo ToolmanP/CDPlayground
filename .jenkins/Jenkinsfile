@@ -7,8 +7,10 @@ pipeline {
       }
       environment {
         GOPROXY = "goproxy.cn,direct"
+        GOCACHE = "/tmp/.cache"
       }
       steps {
+        sh "mkdir -p /tmp/.cache"
         sh "go build -o main"
       }
     }

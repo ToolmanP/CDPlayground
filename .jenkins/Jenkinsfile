@@ -5,6 +5,9 @@ pipeline {
       agent {
         docker { image 'golang:latest' }
       }
+      environment {
+        GOPROXY = "goproxy.cn,direct"
+      }
       steps {
         sh "go version"
       }

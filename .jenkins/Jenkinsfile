@@ -2,8 +2,11 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+      agent {
+        docker { image 'golang:latest' }
+      }
       steps {
-        sh 'docker run --rm -v $(pwd):$(pwd):Z -w $(pwd) -e GOPROXY=goproxy.cn,direct go build -o main'
+        sh "go version"
       }
     }
   }

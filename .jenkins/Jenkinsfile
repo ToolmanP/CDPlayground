@@ -12,6 +12,7 @@ pipeline {
       steps {
         sh "mkdir -p /tmp/.cache"
         sh "go build -o main"
+        sh "echo hello world"
       }
     }
   }
